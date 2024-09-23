@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab 4</title>
+    <style>
+       
+        .twoCol .col1,
+        .twoCol .col2 {
+            border: 2px solid black;
+            padding: 20px;
+            width: 40%;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .twoCol .col1 {
+            float: left;
+        }
+
+        .twoCol .col2 {
+            float: right;
+        }
+
+    </style>
+</head>
+<body style="background-color: chocolate;">
+    <h1 id="page-heading">Japnith Singh: Lab 4</h1>
+
+    <div class="twoCol">
+        <div class="col1">
+        <form>
+
+            <label>Enter Name:</label>
+            <input type="text" id="name" required>
+            <button type="button" onclick="alertThem()">Alert Me</button>
+
+        </form>
+        </div>
+    </div>
+
+    <script>        
+        function alertThem() {
+
+            const name = document.getElementById('name').value;
+            alert(`Hello ${name}...`);
+
+        }
+    </script>
+   
+   <div class="twoCol">
+        <div class="col1">
+
+        <button onclick="addText()">Add Text</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        function addText() {
+            const heading = document.getElementById('page-heading');
+            heading.textContent += ' Adding Text';
+        }
+
+    </script>
+
+
+    <div class="twoCol">
+        <div class="col2">
+
+        <button onclick="changeColor()">Change Color</button>
+
+        </div>
+    </div>
+
+    <script>
+        
+        let blue = true;
+        function changeColor() {
+            document.body.style.backgroundColor = blue ? 'green' : 'blue';
+            if (blue == false) {
+                blue = true
+            }
+            else {
+                blue = false
+            }
+            
+        }
+
+    </script>
+
+
+    <div class="twoCol">
+        <div class="col2">
+            <form id>
+
+                <label >Text:</label>
+                <input type="text" id="text-input">
+                <button type="button" onclick="validateText()">Validate Text</button>
+
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function validateText() {
+            const text = document.getElementById('text-input').value;
+            const validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+            if (validation.test(text)) {
+                alert("Try Again!");
+            }
+        }
+    </script>
+
+</body>
+</html>
